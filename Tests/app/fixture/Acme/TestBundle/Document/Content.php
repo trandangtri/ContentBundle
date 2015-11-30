@@ -24,7 +24,7 @@ class Content extends AbstractContentDocument
     /**
      * @var string
      *
-     * @ES\Property(type="string", name="short_description", index="not_analyzed")
+     * @ES\Property(type="string", name="short_description", options={"index"="not_analyzed"})
      */
     private $shortDescription;
 
@@ -52,7 +52,7 @@ class Content extends AbstractContentDocument
     /**
      * @var string
      *
-     * @ES\Property(type="string", name="root_id", boost=1.0, index="not_analyzed")
+     * @ES\Property(type="string", name="root_id", boost=1.0, options={"index"="not_analyzed"})
      */
     private $rootId;
 
@@ -66,7 +66,7 @@ class Content extends AbstractContentDocument
     /**
      * @var string
      *
-     * @ES\Property(type="string", name="folder", index="not_analyzed")
+     * @ES\Property(type="string", name="folder", options={"index"="not_analyzed"})
      */
     private $folder;
 
