@@ -27,7 +27,7 @@ abstract class AbstractContentDocument extends AbstractDocument
     /**
      * @var string
      *
-     * @ES\Property(type="string", name="slug", options={"index"="no"})
+     * @ES\Property(type="string", name="slug", options={"index"="not_analyzed"})
      */
     protected $slug;
 
