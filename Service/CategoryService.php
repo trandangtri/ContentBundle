@@ -15,7 +15,7 @@ use ONGR\ContentBundle\Document\AbstractCategoryDocument;
 use ONGR\ElasticsearchBundle\Document\DocumentInterface;
 use ONGR\ElasticsearchDSL\Query\TermQuery;
 use ONGR\ElasticsearchDSL\Search;
-use ONGR\ElasticsearchDSL\Sort\Sort;
+use ONGR\ElasticsearchDSL\Sort\FieldSort;
 use ONGR\ElasticsearchBundle\Service\Repository;
 use ONGR\ElasticsearchBundle\Result\DocumentIterator;
 
@@ -79,7 +79,7 @@ class CategoryService
         /** @var Search $search */
         $search = $this->repository->createSearch();
         $search->setSize($this->limit);
-        $search->addSort(new Sort('left', Sort::ORDER_ASC));
+        $search->addSort(new FieldSort('left', FieldSort::ASC));
         $search->addQuery(new TermQuery('active', true), 'must');
         if (!$this->loadHiddenCategories) {
             $search->addQuery(new TermQuery('is_hidden', 0), 'must');
