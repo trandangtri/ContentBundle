@@ -13,14 +13,13 @@ namespace ONGR\ContentBundle\Document;
 
 use ONGR\ElasticsearchBundle\Annotation as ES;
 use ONGR\RouterBundle\Document\SeoAwareTrait;
-use ONGR\ElasticsearchBundle\Document\AbstractDocument;
 
 /**
  * Product document with standard fields.
  *
  * @ES\Document(create=false)
  */
-abstract class AbstractProductDocument extends AbstractDocument
+abstract class AbstractProductDocument
 {
     use SeoAwareTrait;
 
